@@ -1,4 +1,4 @@
-import './src/jsbarcode.js';
+import '/src/jsbarcode.js';
 
 let adatok = [];
 let altAdatok = [];
