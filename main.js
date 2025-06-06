@@ -1,3 +1,5 @@
+import './src/jsbarcode.js';
+
 let adatok = [];
 let altAdatok = [];
 let printers = [];
@@ -282,8 +284,8 @@ document.addEventListener("DOMContentLoaded", () => {
       currentAltNumber = talalatok[0].alt;
       
       // Vonalkód generálása
-      if (currentAltNumber) {
-        JsBarcode("#barcode", currentAltNumber, {
+      if (currentAltNumber && window.JsBarcode) {
+        window.JsBarcode("#barcode", currentAltNumber, {
           format: "CODE128",
           width: 2,
           height: 100,
