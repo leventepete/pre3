@@ -1,0 +1,22 @@
+{
+  "name": "hullov-cikkszam-lekerdezo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsbarcode": "^3.11.5",
+    "canvas": "^2.11.2",
+    "net": "^1.0.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

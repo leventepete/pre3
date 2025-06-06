@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tool</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+  <!-- Betöltési animáció -->
+  <div id="loadingBarWrapper">
+    <div id="loadingBar"></div>
+  </div>
+
+  <header>
+    <h1>Tool</h1>
+  </header>
+
+  <!-- Navigációs menü -->
+  <ul class="nav-tabs">
+    <li><a href="#cikkszam-tab" class="active">HULLOV article number search</a></li>
+    <li><a href="#altdep-tab">ALT/DEP</a></li>
+  </ul>
+
+  <!-- Cikkszám kereső tab -->
+  <div id="cikkszam-tab" class="tab-content active">
+    <main>
+      <!-- Bal oldali kereső modul -->
+      <section id="cikkszam-modul" class="modul">
+        <h3>Keresés EAN / D365 cikkszám / gyártói cikkszám alapján</h3>
+        <div class="kereso-wrapper">
+          <input type="text" id="kereso" placeholder="Olvass vagy írj be kódot..." autofocus />
+          <button class="clear-button" id="torles-gomb">✕</button>
+        </div>
+        <div id="eredmeny"></div>
+      </section>
+
+      <!-- Jobb oldali napló modul -->
+      <section id="naplo-container">
+        <h3>Lekérdezési napló (aktuális munkamenet)</h3>
+        <table id="naploTabla">
+          <thead>
+            <tr>
+              <th>Cikkszám</th>
+              <th>Gyártói cikkszám</th>
+              <th>Lokáció</th>
+              <th>Db</th>
+              <th>Törlés</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Itt jelennek meg dinamikusan a sorok -->
+          </tbody>
+        </table>
+        <button id="masolasGomb">Napló másolása</button>
+      </section>
+    </main>
+  </div>
+
+  <!-- ALT/DEP tab -->
+  <div id="altdep-tab" class="tab-content">
+    <main>
+      <section id="altdep-modul" class="modul">
+        <h3>Keresés ALT / DEP / Cikkszám / Leírás alapján</h3>
+        <div class="kereso-wrapper">
+          <input type="text" id="altdep-kereso" placeholder="Keresés..." />
+          <button class="clear-button" id="altdep-torles-gomb">✕</button>
+        </div>
+        <div id="altdep-eredmeny"></div>
+      </section>
+
+      <section id="barcode-container" class="modul">
+        <h3>Vonalkód nyomtatás</h3>
+        <div id="barcode-display">
+          <svg id="barcode"></svg>
+        </div>
+        <div class="print-controls">
+          <select id="printer-select">
+            <option value="">Válassz nyomtatót...</option>
+            <!-- Nyomtatók listája dinamikusan betöltve -->
+          </select>
+          <button id="print-barcode-button" disabled>Vonalkód nyomtatása</button>
+        </div>
+        <div id="print-status"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 - Levi</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

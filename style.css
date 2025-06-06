@@ -1,0 +1,441 @@
+/* Alapbeállítások */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+/* Fejléc */
+header {
+  background-color: #ff6600;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: black;
+}
+
+header h2 {
+  margin: 5px 0 0;
+  font-size: 1.2em;
+  color: #1e1e1e;
+}
+
+/* Navigációs menü */
+.nav-tabs {
+  display: flex;
+  background-color: #222;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #333;
+}
+
+.nav-tabs li {
+  flex: 1;
+}
+
+.nav-tabs li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.nav-tabs li a:hover {
+  background-color: #444;
+}
+
+.nav-tabs li a.active {
+  background-color: #ff6600;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-tabs li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ff8533;
+}
+
+/* Tab tartalom */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Fő tartalom */
+main {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modul {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-left: 5px solid #ff6600;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 400px;
+  position: relative;
+}
+
+.kereso-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  padding-right: 40px;
+  font-size: 1.2em;
+  border: 2px solid #ff6600;
+  border-radius: 5px;
+  background-color: #111;
+  color: white;
+  box-sizing: border-box;
+}
+
+.clear-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 5px;
+  display: none;
+}
+
+.clear-button:hover {
+  color: #ff6600;
+}
+
+/* Találat kártyák */
+#eredmeny {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.no-results {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.talalat-blokk {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.talalat-blokk:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(255, 102, 0, 0.4);
+}
+
+.talalat-adatok {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+.talalat-adatok p {
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+.lokacio-kep-wrapper {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.lokacio-kep {
+  max-width: 180px;
+  max-height: 180px;
+  object-fit: contain;
+  border: 2px solid #ff6600;
+  border-radius: 8px;
+}
+
+/* Napló modul */
+#naplo-container {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-left: 5px solid #ff6600;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 300px;
+  box-sizing: border-box;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#naploTabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+#naploTabla th,
+#naploTabla td {
+  border: 1px solid #444;
+  padding: 8px;
+  text-align: left;
+}
+
+#naploTabla th {
+  background-color: #333;
+  color: #ff6600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.db-input {
+  width: 60px;
+  height: 28px;
+  padding: 2px 6px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.db-input:focus {
+  border-color: #ff6600;
+  outline: none;
+}
+
+.delete-btn {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #ff0000;
+}
+
+#masolasGomb {
+  margin-top: 15px;
+  padding: 10px 15px;
+  font-size: 1em;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+#masolasGomb:hover {
+  background-color: #ff8533;
+}
+
+/* ALT/DEP modul */
+#altdep-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #2a2a2a;
+  border-left: 5px solid #ff6600;
+  border-radius: 8px;
+}
+
+/* Barcode display */
+#barcode-display {
+  margin: 20px 0;
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.print-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.print-controls select, 
+.print-controls button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+.print-controls select {
+  flex: 1;
+  background-color: #333;
+  color: white;
+}
+
+.print-controls button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.print-controls button:hover:not(:disabled) {
+  background-color: #ff8533;
+}
+
+.print-controls button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+#print-status {
+  margin-top: 15px;
+  text-align: center;
+  min-height: 24px;
+}
+
+/* Lábléc */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #111;
+  color: #666;
+}
+
+/* Betöltési animációs csík */
+#loadingBarWrapper {
+  width: 100%;
+  height: 4px;
+  background-color: #444;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+}
+
+#loadingBar {
+  width: 30%;
+  height: 100%;
+  background-color: #ff6600;
+  animation: loadingMove 1s linear infinite;
+}
+
+@keyframes loadingMove {
+  0% {
+    margin-left: -30%;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+/* Mobilbarát */
+@media screen and (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  
+  #naplo-container {
+    width: 100%;
+    max-height: 50vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header h2 {
+    font-size: 1em;
+  }
+
+  .nav-tabs li a {
+    padding: 10px 8px;
+    font-size: 0.9em;
+  }
+
+  main {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .modul {
+    padding: 15px;
+    min-width: unset;
+  }
+
+  input[type="text"] {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  #eredmeny {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .talalat-blokk {
+    width: 100%;
+  }
+
+  .lokacio-kep {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  
+  #naploTabla {
+    font-size: 0.9em;
+  }
+  
+  .db-input {
+    width: 50px;
+    height: 24px;
+    font-size: 12px;
+  }
+}
